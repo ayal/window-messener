@@ -5,6 +5,6 @@ window.addEventListener('message', (event) => {
   }
   if (event.data.pubsub_from_wix) { // get a message on window from wix and pass it to user
     console.log('got message from wix, passing it to user', event.data.pubsub_from_wix);
-    window.parent.postMessage({pubsub: event.data.pubsub_from_wix}, '*');
+    window.parent.parent.postMessage({pubsub: event.data.pubsub_from_wix}, '*');
   }
 })
